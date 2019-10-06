@@ -1,0 +1,37 @@
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 820px) {
+    /* start container */
+    .container
+    {
+        width:95%;
+        margin:50px auto ;
+        padding:1px 10px 10px 10px;
+    }
+    /* end container */
+    .accordion{
+        height: 120px;
+        font-size: 30px;
+    }
+    .frame{
+        height:400px;
+    }
+    .code span pre{
+        height:150px;
+    }
+    .show-button{
+        padding: 15px 25px;
+        font-size: 25px;
+    }
+    .modal .close{
+    font-size: 80px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}

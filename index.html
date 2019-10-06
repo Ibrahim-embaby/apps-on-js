@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Simple Applictions On Javascript</title>
+        <link rel="icon" href="icons/js-icon.png">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/css.css">
+        <link rel="stylesheet" href="css/media.css">
+    </head>
+    <body>
+        <h1>Simple Applictions On <span style="color:#000;text-shadow: #fff 1.5px 1.5px 0px;">Javascript</span></h1>
+        <!-- start type writer -->
+        <div class="container">
+            <h2>Type Writer Effect</h2>
+            <div class="type-writer-container">
+                <p id="text"></p>
+                <button id="button">start type</button>
+            </div>
+            <!-- start showing code -->
+            <span class="idea-link">the idea from: 
+                <a href="https://www.youtube.com/watch?v=GT58LOLcfvY&list=PLDoPjvoNmBAxhsMvDrXldKClH7FdE8WSf&index=4" target="_blank">Elzero Web School</a>
+            </span>
+            <button class="show-button">show code</button>
+            <div class="code">
+                <span><section>Html</section>
+                    <pre wrap="wrap">
+                        &lt;div class="type-writer-container"&gt;
+                            &lt;p id="text"&gt;&lt;/p&gt;
+                            &lt;button id="button"&gt;&lt;/button&gt;
+                        &lt;/div&gt;
+                    </pre>
+                <span><section>Css</section>
+                    <pre wrap="wrap">
+                            .type-writer-container{
+                                text-align: center;
+                            }
+                            .type-writer-container p{
+                                width:95%;
+                                height: 50px;
+                                padding: 10px;
+                                text-align: left;
+                                border: 2px solid rgb(156, 39, 176);
+                                margin: 10px auto;
+                                overflow:auto;
+                            }
+                            .type-writer-container button{
+                                padding:8px 10px;
+                                cursor: pointer;
+                                background: rgb(33, 150, 243);
+                                border: none;
+                                color:#fff;
+                                font-size: 18px;
+                            }               
+                    </pre>
+                </span>
+                <span><section>Javascript</section>
+                    <pre wrap="wrap">
+                        var myParagraph = document.getElementById('text'),
+                            myButton = document.getElementById('button'),
+                            myText = "hello world from javascript";
+                        var j = 0;
+                    
+                        myButton.onclick = function (){
+                            var typeWriter = setInterval(function (){
+                                myParagraph.textContent += myText[j];
+                                j++;
+                                if(j > myText.length-1){
+                                    clearInterval(typeWriter);
+                                }
+                        }, 170)};                    
+                    </pre>
+                </span>
+            </div>
+            <!-- end showing code -->           
+        </div>
+        <!-- end type writer -->
+
+        <!-- start accordion -->
+        <div class="container">
+            <h2>Accordion</h2>
+            <button class="accordion">section 1</button>
+            <div class="desc">
+                <p id="txt">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus reprehenderit tenetur consequuntur quam? Cum nisi officia odit maiores ratione consectetur, sit ex voluptates. Laboriosam reprehenderit cum ducimus quas eius incidunt.</p>
+            </div>
+            <button class="accordion">section 2</button>
+            <div class="desc">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus reprehenderit tenetur consequuntur quam? Cum nisi officia odit maiores ratione consectetur, sit ex voluptates. Laboriosam reprehenderit cum ducimus quas eius incidunt.</p>
+            </div>
+            <button class="accordion">section 3</button>
+            <div class="desc">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum quidem accusamus debitis quae cumque. Eaque consectetur quos doloremque expedita mollitia dolorem aliquid modi velit. Iusto fugiat eum eligendi molestiae nesciunt.</p>
+            </div>
+            <!-- start showing code -->
+            <span class="idea-link">the idea from: 
+                <a href="https://www.youtube.com/watch?v=KZFSZjLnr_o&list=PLtFbQRDJ11kH1QG_cGo4Z9-V66BBuAH9Q" target="_blank">Unique Coderz Academy</a>
+            </span>
+            <button class="show-button">show code</button>
+            <div class="code">
+                <span><section>Html</section>
+                    <pre wrap="wrap">
+                        &lt;button class="accordion" &gt;section 1 &lt;/button&gt;
+                        &lt;div class="desc"&gt;
+                            &lt;p&gt;
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam illum ea dignissimos quos architecto a corporis modi voluptate nam! Unde assumenda expedita quae, architecto esse alias inventore? Provident, quidem quo.
+                            &lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;button class="accordion" &gt;section 2 &lt;/button&gt;
+                        &lt;div class="desc"&gt;
+                            &lt;p&gt;
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam illum ea dignissimos quos architecto a corporis modi voluptate nam! Unde assumenda expedita quae, architecto esse alias inventore? Provident, quidem quo.
+                            &lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;button class="accordion" &gt;section 3 &lt;/button&gt;
+                        &lt;div class="desc"&gt;
+                            &lt;p&gt;
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam illum ea dignissimos quos architecto a corporis modi voluptate nam! Unde assumenda expedita quae, architecto esse alias inventore? Provident, quidem quo.
+                            &lt;/p&gt;
+                        &lt;/div&gt;
+                    </pre>
+                </span>
+                <span><section>Css</section>
+                    <pre wrap="wrap">
+                                .accordion{
+                                    border:none;
+                                    font-size: 18px;
+                                    width: 100%;
+                                    height:50px;
+                                    padding:20px;
+                                    text-align: left;
+                                    cursor:pointer;
+                                    transition: background .5s  ease-in-out;
+                                }
+                                .accordion:hover{
+                                    background-color: #ccc;
+                                }
+                                .accordion:after{
+                                    content:"+";
+                                    float: right;
+                                }
+                                .active:after{
+                                    content:"\2212";
+                                }
+                                .desc{
+                                    padding: 0px 25px;
+                                    height: 0px;
+                                    overflow: hidden; 
+                                    transition: height .3s ease-in-out;
+                                }
+                    </pre>
+                </span>
+                <span><section>Javascript</section>
+                    <pre wrap="wrap">
+                    let head = document.getElementsByClassName('accordion');
+    
+                    for(var i=0 ; i < head.length ; i++)
+                    {
+                        head[i].addEventListener('click',function(){
+                            var div = this.nextElementSibling;
+                            this.classList.toggle("active");
+                            if(div.style.height){
+                                div.style.height = null;
+                            }
+                            else{
+                                div.style.height = div.scrollHeight + "px";
+                            }
+                        })
+                    } 
+                    </pre>
+                </span>
+            </div>
+            <!-- end showing code -->
+        </div>
+        <!-- end accordion -->
+
+        <!-- start slideShow -->
+        <div class="container">
+            <h2 class="headslide">Slide Show</h2>
+            <div class="frame">
+                <img name="slideShow">
+            </div>
+            <!-- start showing code -->
+            <span class="idea-link">the idea from: 
+                <a href="https://www.youtube.com/watch?v=gdchnTY6jVw&list=PLtFbQRDJ11kH1QG_cGo4Z9-V66BBuAH9Q&index=2" target="_blank">Unique Coderz Academy</a>
+            </span>
+            <button class="show-button">show code</button>
+            <div class="code">
+                <span><section>Html</section>
+                    <pre wrap="wrap">
+                        &lt;div class="frame"&gt;
+                            &lt;img name="slideShow"&gt;
+                        &lt;/div&gt;
+                    </pre>
+                <span><section>Css</section>
+                    <pre wrap="wrap">
+                            .frame{
+                                height:400px;
+                                padding: 5px;
+                                border:1px solid rgb(255, 187, 0);
+                                border-radius: 5px;
+                            }                            
+                    </pre>
+                </span>
+                <span><section>Javascript</section>
+                    <pre wrap="wrap">
+                        var slidephotos = ["photos/photo-1.jpg","photos/photo-2.jpg","photos/photo-3.jpg","photos/photo-4.jpg","photos/photo-8.jpg"];
+                        var i = 0;
+                        var slidShow = function(){
+                            document.slideShow.src = slidephotos[i];
+                        
+                            if( i < slidephotos.length - 1)
+                            {
+                                i++;
+                            }else{
+                                i = 0;
+                            };
+                             setTimeout("slidShow()",2000);
+                        }
+                        slidShow();
+                    </pre>
+                </span>
+            </div>
+            <!-- end showing code -->           
+        </div>
+        <!-- end slideShow -->
+
+        <!-- start Modal -->
+        <div class="container">
+            <h2>Modal</h2>
+            <div class="frame frame2">
+                <img src="photos/photo-10.jpg" alt="The Nature" id="the-img">
+            </div>
+            <!-- start showing code -->
+            <span class="idea-link">the idea from: 
+                <a href="https://www.youtube.com/watch?v=mU9Ta7MjNoM&list=PLtFbQRDJ11kH1QG_cGo4Z9-V66BBuAH9Q&index=3" target="_blank">Unique Coderz Academy</a>
+            </span>
+            <button class="show-button">show code</button>
+            <div class="code">
+                <span><section>Html</section>
+                    <pre wrap="wrap">
+                        &lt;div class="frame frame2"&gt;
+                            &lt;img src="photos/photo-10.jpg" alt="The Nature" id="the-img"&gt;
+                        &lt;/div&gt;
+                        &lt;div class="modal" id="the-modal"&gt;
+                            &lt;span class="close"&gt;&amp;times&lt;/span&gt;
+                            &lt;img id="img" class="modal-content"&gt;
+                            &lt;div id=""caption&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    </pre>
+                <span><section>Css</section>
+                    <pre wrap="wrap">
+                            .frame2 img{
+                                transition: .5s opacity ease-in-out;
+                            }
+                            .frame2 img:hover{
+                                opacity: .8;
+                                cursor: pointer;
+                            }
+                            .modal{
+                                display:none;
+                                position:fixed;
+                                top:0;
+                                left:0;
+                                height: 100%;
+                                width:100%;
+                                background-color:rgba(3, 3, 3, 0.9);
+                            }
+                            .modal .close{
+                                font-size: 40px;
+                                position: absolute;
+                                top:0px;
+                                right:20px;
+                                font-weight: bold;
+                                color: #fff;
+                                cursor: pointer;
+                                display: block;
+                            }
+                            .modal .modal-content{
+                                width: 90%;
+                                height: 80%;
+                                display: block;
+                                margin: 50px auto 25px;
+                                animation: zomming .5s ease-in-out;
+                            }
+                            .modal #caption{
+                                text-align: center;
+                                color:#fff;
+                                font-size: 20px;
+                                animation: zomming .5s ease-in-out;
+                            }               
+                    </pre>
+                </span>
+                <span><section>Javascript</section>
+                    <pre wrap="wrap">
+                        var image = document.getElementById('the-img'),
+                            modal = document.getElementById('the-modal'),
+                            close = document.querySelector('.close'),
+                            modalImage = document.getElementById('img'),
+                            caption = document.getElementById('caption');
+                        
+                        image.onclick = function(){
+                            modal.style.display = 'block';
+                            modalImage.src = this.src ;
+                            caption.textContent = this.alt;
+                        }
+                        
+                        close.onclick = function(){
+                            modal.style.display = 'none';
+                        }
+                        
+                        document.onkeyup = function(ev){
+                            if(ev.keyCode == "27")
+                            {
+                                modal.style.display = 'none';
+                            }
+                        }
+                    </pre>
+                </span>
+            </div>
+            <!-- end showing code -->            
+        </div>
+        <div class="modal" id="the-modal">
+            <span class="close">&times;</span>
+            <img id="img" class="modal-content">
+            <div id="caption"></div>
+        </div>
+        <!-- end Modal -->
+
+        <!-- start App 1 -->
+        <!-- <div class="container">
+            <h2>App 1</h2>
+            <div class="app1-cont">
+                <h3 class="app1-head" id="head-content">click any paragraph</h3>
+                <button class="app1-add" id="add">+ add</button>
+                <ul class="uno-list" id="uno-list">
+                    <li>paragraph 1</li>
+                    <li>paragraph 2</li>
+                    <li>paragraph 3</li>
+                </ul>
+            </div>
+            //start showing code
+            <button class="show-button">show code</button>
+            <div class="code">
+                <span><section>Html</section>
+                    <pre wrap="wrap">
+                        &lt;div class="app1-cont"&gt;
+                            &lt;h3 class="app1-head" id="head-content"&gt;click any paragraph&lt;/h3&gt;
+                            &lt;button class="app1-add" id="add"&gt;+ add&lt;/button&gt;
+                            &lt;ul class="uno-list" id="uno-list"&gt;
+                                &lt;li&gt;paragraph 1&lt;/li&gt;
+                                &lt;li&gt;paragraph 2&lt;/li&gt;
+                                &lt;li&gt;paragraph 3&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                    </pre>
+                </span>
+                <span><section>Css</section>
+                    <pre wrap="wrap">
+                            .app1-head{
+                                text-align: center;
+                                border:1px solid rgb(243, 54, 54);
+                                padding: 10px;
+                            }
+                            .app1-add{
+                                background-color: rgb(76, 191, 245);
+                                width:110px;
+                                border:none;
+                                height: 30px;
+                                cursor: pointer;
+                            }
+                            .uno-list{
+                                list-style: decimal;
+                            }
+                            .uno-list li{
+                                padding: 5px;
+                                cursor: pointer;
+                            }
+                            .activate{
+                                background-color: rgb(201, 67, 67);
+                                color:#fff;
+                            }
+                    </pre>
+                </span>
+                <span><section>Javascript</section>
+                    <pre wrap="wrap">
+                        var heading = document.getElementById('head-content'),
+                            unOrderList = document.getElementById('uno-list'),
+                            list = document.querySelectorAll('.uno-list li'),
+                            add = document.getElementById('add');
+                        
+                        for(var i=0;i < list.length;i++)
+                        {
+                            list[i].onclick = function(){
+                                heading.textContent = this.textContent;
+                                for(var x=0 ; x &lt; list.length;x++){
+                                    list[x].classList.remove('activate');
+                                }
+                                this.classList.add('activate');
+                            }
+                        }
+                        add.onclick = function(){
+                            unOrderList.innerHTML += "&lt;li>new item&lt;/li>"
+                        }
+                    </pre>
+                </span>
+            </div>
+            // end showing code
+        </div> -->
+        <!-- end App 1 -->
+
+        <!-- start appear effect -->
+        <div class="container">
+            <h2>Appear Effect</h2>
+            <p class="appear">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut mollitia quae tenetur quis laborum odit maxime, possimus, alias reiciendis pariatur, omnis libero molestias harum modi totam inventore. Repellendus, dolores facere?<br>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, reprehenderit dolorem. Iste dolore itaque voluptas explicabo quibusdam ipsa unde voluptatibus quis. Magni pariatur nam libero eius impedit! Sint, libero laudantium.<br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit tempora illum, id nesciunt provident doloribus facilis, voluptas ipsam a consequatur veniam veritatis dolor odio, at earum iusto dolorem nobis reprehenderit.
+            </p>
+            <!-- start showing code -->
+            <span class="idea-link">the idea from: 
+                <a href="https://www.youtube.com/watch?v=C_JKlr4WKKs&list=PLDyQo7g0_nsXlSfuoBpG5Fgz0Qe3IvWnA&index=2" target="_blank">Dev Ed</a>
+            </span>
+            <button class="show-button">show code</button>
+            <div class="code">
+                <span><section>Html</section>
+                    <pre wrap="wrap">
+                        &lt;p class="appear"&gt;
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas libero dignissimos perferendis earum voluptatem ut laudantium ipsa repellat id molestiae unde, veniam nostrum illo corrupti deleniti nam! Et, maxime dolores.
+                        &lt;/p&gt;
+                    </pre>
+                <span><section>Css</section>
+                    <pre wrap="wrap">
+                            .appear{
+                                opacity:0;
+                                transform: translateX(-20px);
+                                transition: all .5s ease-in-out;
+                            }
+                            .appear_active{
+                                opacity:1;
+                                transform: translateX(0px);
+                            }            
+                    </pre>
+                </span>
+                <span><section>Javascript</section>
+                    <pre wrap="wrap">
+                            function scrollAppearEffect(){
+                                var par = document.querySelector('.appear'),
+                                    parPosition = par.getBoundingClientRect().top,
+                                    winPosition = window.innerHeight/1.5;
+                                if(parPosition < winPosition)
+                                {
+                                    par.classList.add('appear_active');
+                                }
+                            }
+                            
+                            window.addEventListener('scroll',scrollAppearEffect);
+                    </pre>
+                </span>
+            </div>
+            <!-- end showing code --> 
+        </div>
+        <!-- end appear effect -->
+        <footer>
+            <p>Built with <span>♥</span> by Embaby<br>
+                all rights &copy; reversed
+            </p>
+            <!-- <a href="https://www.facebook.com/profile.php?id=100007028495431" target="_blank" style="text-decoration: none; color: #fff;"><i class="fa fa-facebook-square" style="font-size: 25px;" aria-hidden="true"></i></a> -->
+        </footer>
+        <script src="js/js.js"></script>
+    </body>
+</html>
